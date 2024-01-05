@@ -13,25 +13,30 @@ class MovieItem extends HTMLElement {
         const IMAGE_PATH = "https://image.tmdb.org/t/p/w500/"
         this.shadowDOM.innerHTML = `
         <style>
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
-            :host {
+            .movie-item {
                 display: flex;
-                margin-bottom: 10px;
+                flex-direction: row;
+                width: 100%;
+                margin-bottom: 20px;
+                background: #fff;
                 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-                border-radius: 10px;
-                overflow: hidden;
+                border-radius: 15px;
             }
-            .fan-art-movie {
+            .movie-img img {
                 width: 200px;
-                object-fit: cover;
-                object-position: center;
+                border-radius: 15px;
+            }
+            @media (max-width: 578px) {
+                .movie-item {
+                    display: flex;
+                    flex-direction: column;
+                }
+                .movie-img img {
+                    width: 100%;
+                }
             }
             .movie-info {
-                padding: 24px;
+                padding: 20px;
             }
             .movie-info > h2 {
                 font-weight: bold;
@@ -44,21 +49,25 @@ class MovieItem extends HTMLElement {
             }
             
             .movie-info > p {
-                margin-top: 50px;
+                margin-top: 10px;
                 overflow: hidden;
                 font-size: 15px;
                 text-overflow: ellipsis;
                 display: -webkit-box;
                 -webkit-box-orient: vertical;
-                -webkit-line-clamp: 10; /* number of lines to show */
+                -webkit-line-clamp: 10;
             }
         </style>
         
-        <img class="fan-art-movie" src="${IMAGE_PATH}${this._movie.poster_path}" alt="Fan Art">
-        <div class="movie-info">
-            <h2>${this._movie.title}</h2>
-            <h3>${this._movie.vote_average}</h3>
-            <p>${this._movie.overview}</p>
+        <div class="movie-item">
+            <div class="movie-img">
+                <img src="${IMAGE_PATH}${this._movie.poster_path}" alt="Fan Art">
+            </div>
+            <div class="movie-info">
+                <h2>${this._movie.title}</h2>
+                <h3>${this._movie.vote_average}</h3>
+                <p>${this._movie.overview}</p>
+            </div>
         </div>
         `;
     }
