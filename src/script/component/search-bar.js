@@ -24,12 +24,11 @@ class SearchBar extends HTMLElement {
           width: 50%;
           border-radius: 5px;
           margin-top: 40px;
-          padding: 0 25px;
         }
 
         @media (max-width: 992px) {
           .search-container {
-            width: 90%;
+            width: 100%;
           }
         }
         
@@ -63,9 +62,7 @@ class SearchBar extends HTMLElement {
           border-radius: 10px;
           text-transform: uppercase;
         }
-        .search-container > button:hover {
-          background: #AC7088;
-        }
+        
         
         @media screen and (max-width: 578px) {
           .search-container {
@@ -82,11 +79,21 @@ class SearchBar extends HTMLElement {
             width: 100%;
           }
         }
+
+        .container {
+          max-width: 100%;
+          margin-right: auto;
+          margin-left: auto;
+          padding-right: 30px;
+          padding-left: 30px;
+        }
       </style>
       
-      <div id="search-container" class="search-container">
-          <input placeholder="search by Title" id="searchElement" type="search">
-          <button id="searchButtonElement" type="submit" >Search</button>
+      <div class="container">
+        <div id="search-container" class="search-container">
+            <input placeholder="search by Title" id="searchElement" type="search">
+            <button id="searchButtonElement" type="submit" >Search</button>
+        </div>
       </div>
       `;
 

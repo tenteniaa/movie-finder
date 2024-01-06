@@ -21,13 +21,27 @@ class AppBar extends HTMLElement {
             nav h2 {
                 font-size: 30px;
                 color: white;
-                padding: 0 25px;
+            }
+            @media (max-width: 578px) {
+                nav h2 {
+                    text-align: center;
+                }
+              }
+
+            .container {
+                width: 100%;
+                margin-right: auto;
+                margin-left: auto;
+                padding-right: 30px;
+                padding-left: 30px;
             }
         </style>
 
         
         <nav>
-            <h2>Moviegoers</h2>
+            <div class="container">
+                <h2>Moviegoers</h2>
+            </div>
         </nav>
         `;
     }

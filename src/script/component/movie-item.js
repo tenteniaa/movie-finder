@@ -57,16 +57,26 @@ class MovieItem extends HTMLElement {
                 -webkit-box-orient: vertical;
                 -webkit-line-clamp: 10;
             }
+
+            .container {
+                max-width: 100%;
+                margin-right: auto;
+                margin-left: auto;
+                padding-right: 30px;
+                padding-left: 30px;
+            }
         </style>
         
-        <div class="movie-item">
-            <div class="movie-img">
-                <img src="${IMAGE_PATH}${this._movie.poster_path}" alt="Fan Art">
-            </div>
-            <div class="movie-info">
-                <h2>${this._movie.title}</h2>
-                <h3>${this._movie.vote_average}</h3>
-                <p>${this._movie.overview}</p>
+        <div class="container">
+            <div class="movie-item">
+                <div class="movie-img">
+                    <img src="${IMAGE_PATH}${this._movie.poster_path}" alt="Fan Art">
+                </div>
+                <div class="movie-info">
+                    <h2>${this._movie.title}</h2>
+                    <h3>${this._movie.vote_average}</h3>
+                    <p>${this._movie.overview}</p>
+                </div>
             </div>
         </div>
         `;
