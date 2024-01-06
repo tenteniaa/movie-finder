@@ -14,7 +14,7 @@ class AppBar extends HTMLElement {
             nav {
                 display: flex;
                 width: 100%;
-                height: 100px;
+                height: 90px;
                 background: #AC7088;
                 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
             }
